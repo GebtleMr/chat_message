@@ -51,8 +51,12 @@
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE" />
     </root>
+	<root level="warn">
+	    <appender-ref ref="STDOUT" />
+	    <appender-ref ref="FILE" />
+	</root>
     <!--    mapper（sql）日志级别，放在yml控制-->
-        <logger name="com.chat.message" level="debug" />
+    <logger name="com.chat.message" level="debug" />
 
 
 </configuration>
