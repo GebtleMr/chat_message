@@ -1,0 +1,54 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/chat?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+    username: admin
+    password: admin@1234
+    hikari:
+      # 最小连接数
+      minimum-idle: 5
+      # 最大连接数
+      maximum-pool-size: 15
+      #获取连接超时时间
+      connection-timeout: 3000
+      #连接允许在池中闲置的最长时间
+      idle-timeout: 200000
+      # 连接在池中最大生存的时间
+      max-lifetime: 1800000
+      # 检测连接是否有效
+      connection-test-query: select 1
+      ## 数据库连接池名称
+      pool-name: chat-message
+    filter:
+      stat:
+        log-slow-sql: true
+        slow-sql-millis: 1000
+        merge-sql: false
+      wall:
+        config:
+          multi-statement-allow: true
+  redis:
+    port: 6379
+    host: localhost
+    database: 1
+    password: admin@1234
+
+# 小程序配置
+miniprogram:
+  appId:
+  appSecret:
+oss:
+  aliyunBucketName:
+  aliyunAccessKeySecret:
+  aliyunAccessKeyId:
+  aliyunEndPoint:
+  aliyunPrefix:
+  aliyunDomain:
+logging:
+  level:
+    com.example.gradle.mapper: debug
+rsa:
+  public-key: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCZuC3q7vxlObG+ughU3GnHggjsjs9UYz/GeTSL/0oX34WGmGr5llX0IGPuNxd/Yy3nAKp3jcxxmPca1TIMjsQ/T0viPP3otxtKpSkYFyA4YVBuKu1KrcfqEAWGrpdzSiu47hksvEbLEYbvQlqrApBlHzuvcP2Xy2koKMsZBTBDwwIDAQAB
+  private-key: MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAJm4Leru/GU5sb66CFTcaceCCOyOz1RjP8Z5NIv/ShffhYaYavmWVfQgY+43F39jLecAqneNzHGY9xrVMgyOxD9PS+I8/ei3G0qlKRgXIDhhUG4q7Uqtx+oQBYaul3NKK7juGSy8RssRhu9CWqsCkGUfO69w/ZfLaSgoyxkFMEPDAgMBAAECgYBjjdDPMm/r7u2apEj5DLbFKwY0jljgQlbvZ1gMww1tYKnNfbDqa97G+KM/iBaDvevgi6HbQ86AU5zVl/WOBHg7tso9QGkRp9IOcEug94Jc5a7WukkfRESiPLFrS2bGRvWadnbwftw+qgJ657S/WNerUHvzIrUFKsNrZUW59L1xQQJBANQ2ZMNfr/AdRXBC7iaZD63iuWUfxjYQ83vEYHhusC/WJpQQx6SDDy1rMk71tDhbmzb6yJ/LluceqtBv14ZEfLsCQQC5cAjPcaxDPg+dZmjXS9rlAkVgZwuc0imAO2hJl5xMRo6KFUjOcQVpyHlcZHaNE7w6F9FH5NNRuPkntj1CRaiZAkBKQHoDTnDOED/iptiTUs0Ep6b89iAxfL7lGHI00W3+Xu0Cs9hW/LCL0M06iYg0jAEEPL2EBAVZ+wYDho6f4UjPAkBVUXesQie41HAIwlqQXCU9Ypsa7K5KG+PeTPcBjRDrgzcHzx0tZpDQB93WpZ5p8F+U9upiQqT7n7h7Df0HZddZAkAJLUSyF4AGSEBp17hu627SUCG0uNYB0SbWn+ZMHv8uE4z1jBozKbDhecWS8+F86B5rBIS6nW5h4IZ1Edd5eaDz
+
